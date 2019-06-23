@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="poisonFang" class="running"></div>
+  <div class="loading">
+    <h1 class="typing">Loading</h1>
+  </div>
+    <div class="loader"></div>
+</body>
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Mali&display=swap');
+
+body {
+    background-color: #a68adb;
+}
+
+#poisonFang {
+    width:142px;
+    height:96px; 
+    position:absolute;
+    top: calc(50% - 5em);
+    left: calc(50% - 7em);
+    background-image:url("images/poisonFang.png");
+    animation-name: runLoop;
+    animation-duration:0.5s;
+    animation-iteration-count:infinite;
+    animation-timing-function:step-start;
+  }
+
+  @keyframes runLoop{
+      0%{ background-position: 0px 0px; }
+      25%{ background-position:-142px 0px; }
+      50%{ background-position:-284px 0px; }
+      75%{ background-position:-426px 0px; }
+      100%{ background-position:-568px 0px; }      
+  }
+
+  .loading{
+    position:absolute;
+    top: calc(50% + 2em);
+    left: calc(50% - 9.4em);
+  }
+
+  .typing{
+    color: #ccb3ff;
+    font-family: 'Mali', cursive;
+    margin: 0 auto;
+    letter-spacing: 0.5em;
+    width: 12.6ch;
+    overflow: hidden;
+    white-space: nowrap;
+    animation-name: typing;
+    animation-duration: 1s;
+    animation-timing-function: steps(8);
+    animation-iteration-count:infinite;
+    }
+  
+  @keyframes typing {
+    from {
+      width:0
+    }
+  }
+
+  .loader {
+    position:absolute;
+    top: calc(50% - 13em);
+    left: calc(50% - 15.5em);
+    border: 10px solid #b096e3;
+    border-top: 10px solid #a68adb;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin{
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+</style>
+</html>
